@@ -9,8 +9,17 @@ public class Player : MonoBehaviour
     public Rigidbody2D rig;
     public float jumpForce;  // public so inspector can access it
     public SpriteRenderer sr;
-    
 
+    private BoxCollider2D coll; // 
+
+    [SerializeField] private LayerMask jumpableGround; // so you can pass a layer into the field (IT SHOULD BE foreground)
+
+    // I made this so its easier to call instead of typing GetComponent you know the drill aka storing a reference to a component.
+    private void Start()
+    {
+        coll = GetComponent<BoxCollider2D>();
+    }
+       
     void FixedUpdate() // called 50x/sec, best for physics
     {
         // get x-axis input for horiz axis -1 to 1
@@ -38,12 +47,12 @@ public class Player : MonoBehaviour
        
     }
 
-    bool IsGrounded()
+
+ 
+    private bool IsGrounded()
     {
-        // Raycast will act as radar below player, can detect if in air or on ground
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, -0.1f, 0),
-            Vector2.down, 0.2f);
-        return hit.collider != null;
+        // this is the code that prevents infinite jumping
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); //  We create a box around our player the same shape as the box collider if that box overlapps with the boxcollider then it will prevent the infinite jumping 
     }
 
 }
