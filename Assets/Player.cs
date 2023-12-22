@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rig;
     public float jumpForce;  // public so inspector can access it
     public SpriteRenderer sr;
+    
 
     void FixedUpdate() // called 50x/sec, best for physics
     {
@@ -34,10 +35,7 @@ public class Player : MonoBehaviour
         {
             sr.flipX = false;
         }
-        else if (rig.velocity.x < -0.01f)
-        {
-            sr.flipX = true;
-        }
+       
     }
 
     bool IsGrounded()
