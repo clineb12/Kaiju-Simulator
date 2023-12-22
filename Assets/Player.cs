@@ -30,11 +30,11 @@ public class Player : MonoBehaviour
             rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        if (rig.velocity.x > 0) // player is moving right
+        if (rig.velocity.x > 0.01f) // player is moving right
         {
             sr.flipX = false;
         }
-        else if (rig.velocity.x < 0)
+        else if (rig.velocity.x < -0.01f)
         {
             sr.flipX = true;
         }
