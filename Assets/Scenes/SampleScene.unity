@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 1302224741}
   - component: {fileID: 1302224744}
   - component: {fileID: 1302224745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,6 +744,9 @@ MonoBehaviour:
   rig: {fileID: 1760549833}
   jumpForce: 10
   sr: {fileID: 1760549835}
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
