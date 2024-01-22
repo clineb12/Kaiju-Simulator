@@ -940,7 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rig: {fileID: 1760549833}
-  jumpForce: 10
+  jumpForce: 6
   sr: {fileID: 1760549835}
   jumpableGround:
     serializedVersion: 2
@@ -957,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7e3f7fbd67e374da4a09cd986ac4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyKey: 120
 --- !u!1 &2020532624
 GameObject:
   m_ObjectHideFlags: 0
