@@ -957,6 +957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7e3f7fbd67e374da4a09cd986ac4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2020532625}
+  newSprite: {fileID: 7293598183456022363, guid: ae0ab93b9e1f1214fb887549554e74fe, type: 3}
   destroyKey: 120
 --- !u!1 &2020532624
 GameObject:
@@ -1014,8 +1016,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1633001959
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -4570538037665054336, guid: 0bb9c639272d86547b58a64770da949e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
