@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float jumpForce;  // public so inspector can access it
     public SpriteRenderer sr;
     public KeyCode destroyButton = KeyCode.Z; //will change if necessary
-    private GameObject destroyableItem; // for destroyables
+    [SerializeField] private GameObject destroyableItem; // for destroyables
     private BoxCollider2D coll; // 
 
     [SerializeField] private LayerMask jumpableGround; // so you can pass a layer into the field (IT SHOULD BE foreground)
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         }
         if (destroyableItem != null && Input.GetKeyDown(destroyButton))
         {
-                Destroy(destroyableItem);
+            Destroy(destroyableItem);
         }
        
     }
@@ -55,7 +55,8 @@ public class Player : MonoBehaviour
     private bool IsGrounded()
     {
         // this is the code that prevents infinite jumping
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); //  We create a box around our player the same shape as the box collider if that box overlapps with the boxcollider then it will prevent the infinite jumping 
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); // We create a box around our player the same shape as the BoxCollider
+                                                                                                               // if that box overlaps with the Boxcollider then it will prevent the infinite jumping 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +67,7 @@ public class Player : MonoBehaviour
             destroyableItem = collision.gameObject;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == destroyableItem)
