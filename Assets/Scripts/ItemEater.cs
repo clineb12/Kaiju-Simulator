@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ItemEater : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
+    void ChangeSprite()
+    {
+        spriteRenderer.sprite = newSprite;
+    }
     public KeyCode destroyKey = KeyCode.X; // Can change if nessisary
     private GameObject eatableItem; // Reference to the specific food item
 
@@ -22,15 +28,19 @@ public class ItemEater : MonoBehaviour
         {
             // Resets the eatable item when the player is no longer in contact
             eatableItem = null;
+            newSprite = null;
         }
     }
 
+
+
     private void Update()
     {
-        if (eatableItem != null && Input.GetKeyDown(destroyKey))
+        if (eatableItem != null && newSprite != null && Input.GetKeyDown(destroyKey))
         {
             // Destroy the item
-            Destroy(eatableItem);
+            // Destroy(eatableItem);
+            ChangeSprite();
         }
     }
 }
