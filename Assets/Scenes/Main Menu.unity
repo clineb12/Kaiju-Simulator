@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 3697109}
   - component: {fileID: 3697108}
   - component: {fileID: 3697107}
-  - component: {fileID: 3697110}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -185,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.9684567
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -210,25 +209,12 @@ Transform:
   m_GameObject: {fileID: 3697106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.55, z: -10}
+  m_LocalPosition: {x: 15.38, y: 5.09, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2054091819}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3697110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3697106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c65d067ac0fe2b2489f10ecb0f62093d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &46531269
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +225,6 @@ GameObject:
   m_Component:
   - component: {fileID: 46531270}
   - component: {fileID: 46531271}
-  - component: {fileID: 46531272}
   m_Layer: 0
   m_Name: cityBG1
   m_TagString: Untagged
@@ -316,20 +301,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &46531272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46531269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7105611a92c71a14ba8599a7286e5f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 3697106}
-  parallaxEffect: 1
 --- !u!1 &229833705
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +379,6 @@ GameObject:
   m_Component:
   - component: {fileID: 233562674}
   - component: {fileID: 233562675}
-  - component: {fileID: 233562676}
   m_Layer: 0
   m_Name: cityBG3
   m_TagString: Untagged
@@ -485,20 +455,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &233562676
+--- !u!1 &343315654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343315655}
+  - component: {fileID: 343315657}
+  - component: {fileID: 343315656}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &343315655
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343315654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1854570656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030518, y: 81}
+  m_SizeDelta: {x: 999.7169, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &343315656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233562673}
+  m_GameObject: {fileID: 343315654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7105611a92c71a14ba8599a7286e5f34, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 3697106}
-  parallaxEffect: 0.5
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a5e77dabc6638524495094ea712d2cc3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &343315657
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343315654}
+  m_CullTransparentMesh: 1
 --- !u!1 &705119947
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +708,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1088058126}
   - component: {fileID: 1088058127}
-  - component: {fileID: 1088058128}
   m_Layer: 0
   m_Name: cityBG2
   m_TagString: Untagged
@@ -754,20 +784,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1088058128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088058125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7105611a92c71a14ba8599a7286e5f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 3697106}
-  parallaxEffect: 0.7
 --- !u!1 &1101821369
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +857,7 @@ SpriteRenderer:
   m_SortingLayerID: 1633001959
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2eca8b294882cfa4ea92ae0d1767f3dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5ea5b1c0c4110a44b443ff02747740d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1222,8 +1238,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 689685451
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 05b1445bbfa2ce54e86ddb27b5816256, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1246,7 +1262,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1571073682}
   - component: {fileID: 1571073683}
-  - component: {fileID: 1571073684}
   m_Layer: 0
   m_Name: cityBG4
   m_TagString: Untagged
@@ -1323,20 +1338,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1571073684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571073681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7105611a92c71a14ba8599a7286e5f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 3697106}
-  parallaxEffect: 0.3
 --- !u!1 &1789477104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1648,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1852151653}
   - component: {fileID: 1852151654}
-  - component: {fileID: 1852151655}
   m_Layer: 0
   m_Name: cityBG5
   m_TagString: Untagged
@@ -1713,7 +1713,7 @@ SpriteRenderer:
   m_SortingLayerID: 1633001959
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2eca8b294882cfa4ea92ae0d1767f3dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5ea5b1c0c4110a44b443ff02747740d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1724,20 +1724,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1852151655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852151652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7105611a92c71a14ba8599a7286e5f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 3697106}
-  parallaxEffect: 0
 --- !u!1 &1854570652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1822,7 @@ RectTransform:
   - {fileID: 1909607265}
   - {fileID: 1806014543}
   - {fileID: 1293394756}
+  - {fileID: 343315655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1956,7 +1943,7 @@ Transform:
   m_GameObject: {fileID: 1914514457}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.12, y: 0, z: 0}
+  m_LocalPosition: {x: 43.21, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2087,7 +2074,7 @@ SpriteRenderer:
   m_SortingLayerID: 1633001959
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2eca8b294882cfa4ea92ae0d1767f3dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5ea5b1c0c4110a44b443ff02747740d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2122,8 +2109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054091818}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.36, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.73, y: 5.4500003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2132,12 +2119,13 @@ Transform:
   - {fileID: 233562674}
   - {fileID: 1571073682}
   - {fileID: 1852151653}
-  m_Father: {fileID: 3697109}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 3697109}
+  - {fileID: 2054091819}
   - {fileID: 1854570656}
   - {fileID: 229833708}
