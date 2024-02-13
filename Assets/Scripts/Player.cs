@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer sr;
     public KeyCode destroyButton = KeyCode.Z; //will change if necessary
     [SerializeField] private GameObject destroyableItem; // for destroyables
-    private BoxCollider2D coll; // 
+    private BoxCollider2D coll;
 
     [SerializeField] private LayerMask jumpableGround; // so you can pass a layer into the field (IT SHOULD BE foreground)
 
@@ -47,15 +47,28 @@ public class Player : MonoBehaviour
         }
         if (destroyableItem != null && Input.GetKeyDown(destroyButton))
         {
-            Destroy(destroyableItem);
+            // Destroy(destroyableItem);
+            Damage(destroyableItem, 1); //This does a bite, the player is against the object
         }
        
+    }
+
+    private void Damage(GameObject destroyableItem, int damage) {       
+        //Get script associated with health of vehicle
+        //(consider making it a global script that's ONLY responsible for health)
+        if (destroyableItem.CompareTag("Vehicle")) {
+            Vehicle objScript = destroyableItem.GetComponent<Vehicle>();
+            objScript.takeDamage(damage);
+        }
+
+        //Call the objects takeDamage function (Modify this for objects to take later)
+        // objScript.takeDamage(damage);
     }
  
     private bool IsGrounded()
     {
         // this is the code that prevents infinite jumping
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); // We create a box around our player the same shape as the BoxCollider
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround); // We create a box around our player the same shape as the BoxCollider
                                                                                                                // if that box overlaps with the Boxcollider then it will prevent the infinite jumping 
     }
 

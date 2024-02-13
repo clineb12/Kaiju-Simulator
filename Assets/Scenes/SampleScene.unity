@@ -323,6 +323,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+--- !u!61 &256604644 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3698636898586704707, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+  m_PrefabInstance: {fileID: 8951844009691168993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &423187796
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +907,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1760549834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1346,6 +1351,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red_Car_Intact_w_person
       objectReference: {fileID: 0}
+    - target: {fileID: 3698636898586704707, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0476882
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698636898586704707, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698636898586704707, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.050819054
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698636898586704707, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812705129253725196, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: boxColl
+      value: 
+      objectReference: {fileID: 256604644}
     - target: {fileID: 4869003960836993813, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.17
@@ -1385,6 +1410,14 @@ PrefabInstance:
     - target: {fileID: 4869003960836993813, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673147114551920868, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673147114551920868, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

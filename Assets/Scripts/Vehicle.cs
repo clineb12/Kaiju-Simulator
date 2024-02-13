@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    int health = 1;
+    private int health = 1;
 
     public Sprite Car;
     public Sprite DestroyedCar;
 
-    string[] vehicleState = {"Not", "Healthy"};
+    [SerializeField] private BoxCollider2D boxColl;
 
     void Update()
     {
@@ -19,7 +19,22 @@ public class Vehicle : MonoBehaviour
         }
         else if (health == 0)
         {
+            //Change appearance and remove collider
             this.gameObject.GetComponent<SpriteRenderer>().sprite = DestroyedCar;
+            boxColl.enabled = false;
+        }
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void takeDamage(int damage) {
+        //If it would fall below zero, set to zero. Otherwise, do damage
+        if (health - damage < 0) {
+            health = 0;
+        } else {
+            health -= damage;
         }
     }
 }
