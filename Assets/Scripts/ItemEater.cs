@@ -6,12 +6,19 @@ public class ItemEater : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Sprite newSprite;
+    private GameObject eatableItem; // Reference to the specific food item
+    private runaway enemyRunaway; // Reference to the enemy's Runaway script
+    public KeyCode destroyKey = KeyCode.X; // Can change if nessisary
+
+    void Start()
+    {
+        enemyRunaway = FindObjectOfType<runaway>(); // refrence runaway
+    }
     void ChangeSprite()
     {
         spriteRenderer.sprite = newSprite;
     }
-    public KeyCode destroyKey = KeyCode.X; // Can change if nessisary
-    private GameObject eatableItem; // Reference to the specific food item
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,6 +48,9 @@ public class ItemEater : MonoBehaviour
             // Destroy the item
             // Destroy(eatableItem);
             ChangeSprite();
+
+            // BeEaten method of the enemys Runaway Script
+            enemyRunaway.BeEaten(); // called the BeEaten() funciton from runaway.cs
         }
     }
 }
