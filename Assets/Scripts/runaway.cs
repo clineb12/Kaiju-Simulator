@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class runaway : MonoBehaviour
 {
-    public float speed = -5f;
+    public float speed = 1f;
     public Transform player;
     private Rigidbody2D rb;
     private bool isEaten = false; // Checks if the enemy is eaten
+    public float detectionDistance = 10f; // Maximum distance to detect the player
+
+
     
 
     private void Start()
@@ -15,13 +18,23 @@ public class runaway : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isEaten){
-            // Calculate the direction from the object to the player
-            Vector2 direction = new Vector2(-1,0);
-            direction.Normalize();
+        if (!isEaten)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            Debug.Log("Distance to player: " + distanceToPlayer); // shows on the bottom on unity how far the distance is from the player to the object
 
-            // Move the object away from the player
-            rb.velocity = direction * speed;
+            if (distanceToPlayer <= detectionDistance)
+            {
+                // Calculate the direction from the object to the player
+                Vector2 direction = (transform.position - player.position).normalized;
+                // Move the object away from the player
+                rb.velocity = direction * speed;
+            }
+            else
+            {
+                // If player is not within detection distance, stay idle
+                rb.velocity = Vector2.zero;
+            }
         }
     }
         
@@ -30,5 +43,6 @@ public class runaway : MonoBehaviour
         isEaten = true;
         rb.velocity = Vector2.zero; // Stops the movement
        }     
+       
 }
 
