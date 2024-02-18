@@ -1361,9 +1361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b8f02aa06d31747989364ea3698505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
+  speed: 1
   player: {fileID: 1760549836}
-  detectionDistance: -1
+  detectionDistance: 10
 --- !u!50 &2020532629
 Rigidbody2D:
   serializedVersion: 4
