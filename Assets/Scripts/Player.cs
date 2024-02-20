@@ -19,8 +19,9 @@ public class Player : MonoBehaviour
     private void Start()
     {
         coll = GetComponent<BoxCollider2D>();
+        PauseMenu.isPaused = false;
     }
-       
+
     void FixedUpdate() // called 50x/sec, best for physics
     {
         // get x-axis input for horiz axis -1 to 1
@@ -33,30 +34,36 @@ public class Player : MonoBehaviour
 
     void Update() // called every frame
     {
-        // detect when we jump
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
-            && IsGrounded())
+        if (!PauseMenu.isPaused) //checks if game is paused (via PauseMenu script)
         {
-            // force builds speed, impulse makes speed instantenous
-            rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            // detect when we jump
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+                && IsGrounded())
+            {
+                // force builds speed, impulse makes speed instantenous
+                rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+
+            if (rig.velocity.x > 0.01f) // player is moving right
+            {
+                sr.flipX = false;
+            }
+            if (destroyableItem != null && Input.GetKeyDown(destroyButton))
+            {
+                // Destroy(destroyableItem);
+                Damage(destroyableItem, 1); //This does a bite, the player is against the object
+            }
+
         }
 
-        if (rig.velocity.x > 0.01f) // player is moving right
-        {
-            sr.flipX = false;
-        }
-        if (destroyableItem != null && Input.GetKeyDown(destroyButton))
-        {
-            // Destroy(destroyableItem);
-            Damage(destroyableItem, 1); //This does a bite, the player is against the object
-        }
-       
     }
 
-    private void Damage(GameObject destroyableItem, int damage) {       
+    private void Damage(GameObject destroyableItem, int damage)
+    {
         //Get script associated with health of vehicle
         //(consider making it a global script that's ONLY responsible for health)
-        if (destroyableItem.CompareTag("Vehicle")) {
+        if (destroyableItem.CompareTag("Vehicle"))
+        {
             Vehicle objScript = destroyableItem.GetComponent<Vehicle>();
             objScript.takeDamage(damage);
         }
@@ -64,12 +71,12 @@ public class Player : MonoBehaviour
         //Call the objects takeDamage function (Modify this for objects to take later)
         // objScript.takeDamage(damage);
     }
- 
+
     private bool IsGrounded()
     {
         // this is the code that prevents infinite jumping
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround); // We create a box around our player the same shape as the BoxCollider
-                                                                                                               // if that box overlaps with the Boxcollider then it will prevent the infinite jumping 
+                                                                                                                // if that box overlaps with the Boxcollider then it will prevent the infinite jumping 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

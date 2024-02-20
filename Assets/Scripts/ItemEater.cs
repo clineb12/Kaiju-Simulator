@@ -18,7 +18,7 @@ public class ItemEater : MonoBehaviour
     {
         spriteRenderer.sprite = newSprite;
     }
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -43,14 +43,19 @@ public class ItemEater : MonoBehaviour
 
     private void Update()
     {
-        if (eatableItem != null && newSprite != null && Input.GetKeyDown(destroyKey))
+        //checks if game is paused (via PauseMenu script)
+        if (!PauseMenu.isPaused)
         {
-            // Destroy the item
-            // Destroy(eatableItem);
-            ChangeSprite();
+            if (eatableItem != null && newSprite != null && Input.GetKeyDown(destroyKey))
+            {
+                // Destroy the item
+                // Destroy(eatableItem);
+                ChangeSprite();
 
-            // BeEaten method of the enemys Runaway Script
-            enemyRunaway.BeEaten(); // called the BeEaten() funciton from runaway.cs
+                // BeEaten method of the enemys Runaway Script
+                enemyRunaway.BeEaten(); // called the BeEaten() funciton from runaway.cs
+            }
         }
+
     }
 }
