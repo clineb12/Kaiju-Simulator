@@ -67,6 +67,11 @@ public class Player : MonoBehaviour
             Vehicle objScript = destroyableItem.GetComponent<Vehicle>();
             objScript.takeDamage(damage);
         }
+        else if (destroyableItem.CompareTag("Food")){ // for eatable script
+
+            ItemEater objScript = destroyableItem.GetComponent<ItemEater>();
+            objScript.takeDamage(damage);
+        }
 
         //Call the objects takeDamage function (Modify this for objects to take later)
         // objScript.takeDamage(damage);
@@ -85,6 +90,10 @@ public class Player : MonoBehaviour
         {
             // Set the current destroyable item when collision occurs
             destroyableItem = collision.gameObject;
+        }
+        else if (collision.gameObject.CompareTag("Food"))
+        {
+           destroyableItem = collision.gameObject; 
         }
     }
 

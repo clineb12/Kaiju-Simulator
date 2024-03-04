@@ -4,58 +4,44 @@ using UnityEngine;
 
 public class ItemEater : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public Sprite newSprite;
-    private GameObject eatableItem; // Reference to the specific food item
-    private runaway enemyRunaway; // Reference to the enemy's Runaway script
-    public KeyCode destroyKey = KeyCode.X; // Can change if nessisary
+     private int health = 1;
 
-    void Start()
-    {
-        enemyRunaway = FindObjectOfType<runaway>(); // refrence runaway
-    }
-    void ChangeSprite()
-    {
-        spriteRenderer.sprite = newSprite;
-    }
+    public Sprite Guy;
+    public Sprite DeadGuy;
 
+    [SerializeField] private BoxCollider2D boxColl;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Food"))
+        if (health == 1)
         {
-            // Set the current eatable item when the collision with "Food" occurs
-            eatableItem = collision.gameObject;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Guy;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject == eatableItem)
+        else if (health == 0)
         {
-            // Resets the eatable item when the player is no longer in contact
-            eatableItem = null;
-            newSprite = null;
-        }
-    }
+            //Change appearance and remove collider
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = DeadGuy;
+            boxColl.enabled = false;
 
-
-
-    private void Update()
-    {
-        //checks if game is paused (via PauseMenu script)
-        if (!PauseMenu.isPaused)
-        {
-            if (eatableItem != null && newSprite != null && Input.GetKeyDown(destroyKey))
+            // Call BeEaten from runaway.cs script
+            runaway runawayComponent = GetComponent<runaway>(); 
+            if (runawayComponent != null)
             {
-                // Destroy the item
-                // Destroy(eatableItem);
-                ChangeSprite();
-
-                // BeEaten method of the enemys Runaway Script
-                enemyRunaway.BeEaten(); // called the BeEaten() funciton from runaway.cs
+                runawayComponent.BeEaten();
             }
         }
+    }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void takeDamage(int damage) {
+        //If it would fall below zero, set to zero. Otherwise, do damage
+        if (health - damage < 0) {
+            health = 0;
+        } else {
+            health -= damage;
+        }
     }
 }

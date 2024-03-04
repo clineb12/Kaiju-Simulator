@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class runaway : MonoBehaviour
@@ -23,7 +25,7 @@ public class runaway : MonoBehaviour
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
             Debug.Log("Distance to player: " + distanceToPlayer); // shows on the bottom on unity how far the distance is from the player to the object
 
-            if (distanceToPlayer <= detectionDistance)
+            if (distanceToPlayer <= detectionDistance || distanceToPlayer <= -detectionDistance)
             {
                 // Calculate the direction from the object to the player
                 Vector2 direction = (transform.position - player.position).normalized;
