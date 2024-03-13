@@ -29,6 +29,11 @@ public class ItemEater : MonoBehaviour
             {
                 runawayComponent.BeEaten();
             }
+            // Calling SetEaten from Shooting script
+            Shooting shootingComponent = GetComponent<Shooting>();
+            if(shootingComponent != null){
+                shootingComponent.SetEaten(true);
+            }
         }
     }
 
