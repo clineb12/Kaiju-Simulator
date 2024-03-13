@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject optionsMenu;
     public static bool isPaused; //accessable by other objects/scripts; used in those scripts to detect if game is paused
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,9 +45,23 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
+    public void openOptions()
+    {
+        optionsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void closeOptions()
+    {
+        optionsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
     public void goToMainMenu()
     {
-        Time.timeScale = 1f; 
-        SceneManager.LoadScene(0); 
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+        AudioManager.Instance.StopMusic(); 
+        Destroy(AudioManager.Instance); 
     }
 }

@@ -10,15 +10,17 @@ public class Menu : MonoBehaviour
 {
     public void OnStartButton()
     {
+        AudioManager.Instance.StopMusic();
+        Destroy(AudioManager.Instance);
         SceneManager.LoadScene(1);
     }
 
     public void OnQuitButton()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
-        #else
-            Application.Quit();
-        #endif
+#else
+        Application.Quit();
+#endif
     }
 }

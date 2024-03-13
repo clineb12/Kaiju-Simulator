@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemEater : MonoBehaviour
 {
-     private int health = 1;
+    private int health = 1;
 
     public Sprite Guy;
     public Sprite DeadGuy;
@@ -24,7 +24,7 @@ public class ItemEater : MonoBehaviour
             boxColl.enabled = false;
 
             // Call BeEaten from runaway.cs script
-            runaway runawayComponent = GetComponent<runaway>(); 
+            runaway runawayComponent = GetComponent<runaway>();
             if (runawayComponent != null)
             {
                 runawayComponent.BeEaten();
@@ -32,15 +32,20 @@ public class ItemEater : MonoBehaviour
         }
     }
 
-    public int getHealth() {
+    public int getHealth()
+    {
         return health;
     }
 
-    public void takeDamage(int damage) {
+    public void takeDamage(int damage)
+    {
         //If it would fall below zero, set to zero. Otherwise, do damage
-        if (health - damage < 0) {
+        if (health - damage < 0)
+        {
             health = 0;
-        } else {
+        }
+        else
+        {
             health -= damage;
         }
     }

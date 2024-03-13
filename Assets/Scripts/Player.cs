@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
             {
                 // force builds speed, impulse makes speed instantenous
                 rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                AudioManager.Instance.PlaySFX("Jump");
             }
 
             if (rig.velocity.x > 0.01f) // player is moving right
@@ -66,9 +67,11 @@ public class Player : MonoBehaviour
         {
             Vehicle objScript = destroyableItem.GetComponent<Vehicle>();
             objScript.takeDamage(damage);
+            AudioManager.Instance.PlaySFX("Destroy");
         }
-        else if (destroyableItem.CompareTag("Food")){ // for eatable script
-
+        else if (destroyableItem.CompareTag("Food"))
+        { // for eatable script
+            AudioManager.Instance.PlaySFX("Eat");
             ItemEater objScript = destroyableItem.GetComponent<ItemEater>();
             objScript.takeDamage(damage);
         }
@@ -93,7 +96,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Food"))
         {
-           destroyableItem = collision.gameObject; 
+            destroyableItem = collision.gameObject;
         }
     }
 
