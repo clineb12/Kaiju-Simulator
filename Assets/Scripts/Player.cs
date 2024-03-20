@@ -75,6 +75,12 @@ public class Player : MonoBehaviour
             ItemEater objScript = destroyableItem.GetComponent<ItemEater>();
             objScript.takeDamage(damage);
         }
+         else if (destroyableItem.CompareTag("Building")){
+            Building objScript =  destroyableItem.GetComponent<Building>();
+            objScript.takeDamage(damage);
+            AudioManager.Instance.PlaySFX("Destroy");
+         // for building script
+         }
 
         //Call the objects takeDamage function (Modify this for objects to take later)
         // objScript.takeDamage(damage);
@@ -90,6 +96,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Vehicle"))
+        {
+            // Set the current destroyable item when collision occurs
+            destroyableItem = collision.gameObject;
+        }
+         if (collision.gameObject.CompareTag("Building"))
         {
             // Set the current destroyable item when collision occurs
             destroyableItem = collision.gameObject;
