@@ -1884,6 +1884,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 35ff281e782990441a61f0490f0367d3, type: 3}
   - name: Destroy
     clip: {fileID: 8300000, guid: 2318cca57a440014aa4cfbd79a786f30, type: 3}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   musicSource: {fileID: 1221369743}
   sfxSource: {fileID: 1970972231}
   _musicSlider: {fileID: 543314557}

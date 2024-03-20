@@ -40,6 +40,7 @@ public class Shooting : MonoBehaviour
         void shoot()
         {
             Instantiate(bullet, bulletPos.position, Quaternion.identity);
+            AudioManager.Instance.PlaySFX("Shoot");
         }
 
         public void SetEaten(bool eaten)
