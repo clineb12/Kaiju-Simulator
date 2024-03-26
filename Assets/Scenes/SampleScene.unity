@@ -3849,6 +3849,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 640f6c1472bd07d4a9192f0517bc30cf, type: 3}
     - target: {fileID: 2553010147287162320, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2553010147287162320, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1760549836}
@@ -3953,6 +3957,10 @@ PrefabInstance:
       propertyPath: DeadGuy
       value: 
       objectReference: {fileID: 21300000, guid: ef4f367126610f64a82191c909b65243, type: 3}
+    - target: {fileID: 7425173163768721838, guid: 1683ea6eea2ecea4980115e380304d22, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7425173163768721838, guid: 1683ea6eea2ecea4980115e380304d22, type: 3}
       propertyPath: player
       value: 
