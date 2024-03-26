@@ -46,5 +46,6 @@ public class Building : MonoBehaviour
         } else {
             health -= damage;
         }
+        ScoreManager.instance.addPoint(50000);
     }
 }

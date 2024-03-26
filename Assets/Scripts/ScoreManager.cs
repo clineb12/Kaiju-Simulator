@@ -7,8 +7,10 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public Text scoreText;
+    public Text DcText; //death counter text
 
     int score = 0;
+    int deaths = 0;
 
     private void Awake()
     {
@@ -19,13 +21,20 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         scoreText.text ='$'+ score.ToString();
+        DcText.text = deaths.ToString() + " Killed";
         
     }
 
     // Update is called once per frame
-    public void addPoint()
+    public void addDeath()
     {
-        score += 1;
+        deaths += 1;
+        DcText.text =deaths.ToString() + " Killed";
+    }
+
+    public void addPoint(int num)
+    {
+        score += num;
         scoreText.text = '$' + score.ToString();
     }
-}
+};

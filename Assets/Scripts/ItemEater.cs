@@ -22,12 +22,14 @@ public class ItemEater : MonoBehaviour
             //Change appearance and remove collider
             this.gameObject.GetComponent<SpriteRenderer>().sprite = DeadGuy;
             boxColl.enabled = false;
+            
 
             // Call BeEaten from runaway.cs script
             runaway runawayComponent = GetComponent<runaway>();
             if (runawayComponent != null)
             {
                 runawayComponent.BeEaten();
+                
             }
             // Calling SetEaten from Shooting script
             Shooting shootingComponent = GetComponent<Shooting>();
@@ -48,10 +50,12 @@ public class ItemEater : MonoBehaviour
         if (health - damage < 0)
         {
             health = 0;
+            
         }
         else
         {
             health -= damage;
         }
+        ScoreManager.instance.addDeath();
     }
 }
