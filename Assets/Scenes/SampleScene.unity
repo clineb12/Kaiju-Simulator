@@ -3805,12 +3805,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1348752866743680798, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.50180966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348752866743680798, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.49640068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348752866743680798, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.26
+      value: 17.8549
       objectReference: {fileID: 0}
     - target: {fileID: 1348752866743680798, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.71
+      value: -2.89
       objectReference: {fileID: 0}
     - target: {fileID: 1348752866743680798, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3845,6 +3853,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2422272727423125172, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: Guy
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1181beebe58ad4282c8950f9f7d43f, type: 3}
+    - target: {fileID: 2422272727423125172, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: DeadGuy
       value: 
       objectReference: {fileID: 21300000, guid: 640f6c1472bd07d4a9192f0517bc30cf, type: 3}
@@ -3861,8 +3873,12 @@ PrefabInstance:
       value: soldier
       objectReference: {fileID: 0}
     - target: {fileID: 6602367322762838529, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1181beebe58ad4282c8950f9f7d43f, type: 3}
+    - target: {fileID: 6602367322762838529, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6602367322762838529, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_SortingOrder
@@ -3870,7 +3886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602367322762838529, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_SortingLayerID
-      value: 689685451
+      value: 1633001959
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
