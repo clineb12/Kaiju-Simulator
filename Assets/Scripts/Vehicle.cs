@@ -38,7 +38,8 @@ public class Vehicle : MonoBehaviour
             
         } else {
             health -= damage;
+            ScoreManager.instance.addPoint(30000);
         }
-        ScoreManager.instance.addPoint(30000);
+        
     }
 }
