@@ -2999,6 +2999,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739463156}
+  - component: {fileID: 1739463158}
+  - component: {fileID: 1739463157}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -3025,6 +3027,31 @@ Transform:
   - {fileID: 423187798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739463157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739463155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b073653dd604347439e80926c5b65bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1739463158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739463155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14082c0cb63031448c50531917a531c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &1760549832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,6 +3233,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
+  moveLeft: {fileID: 1739463158}
 --- !u!1 &1835081927
 GameObject:
   m_ObjectHideFlags: 0

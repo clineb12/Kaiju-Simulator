@@ -9,17 +9,21 @@ public class Player : MonoBehaviour
     public Rigidbody2D rig;
     public float jumpForce;  // public so inspector can access it
     public SpriteRenderer sr;
-    public KeyCode destroyButton = KeyCode.Z; //will change if necessary
+    private float normalSpeed;
+    private float speedDiff;
+    public KeyCode destroyButton = KeyCode.Z; // will change if necessary
     [SerializeField] private GameObject destroyableItem; // for destroyables
     private BoxCollider2D coll;
-
     [SerializeField] private LayerMask jumpableGround; // so you can pass a layer into the field (IT SHOULD BE foreground)
+    [SerializeField] private MoveLeft moveLeft; // for controlling scroll speed
 
     // I made this so its easier to call instead of typing GetComponent you know the drill aka storing a reference to a component.
     private void Start()
     {
         coll = GetComponent<BoxCollider2D>();
         PauseMenu.isPaused = false;
+        normalSpeed = moveLeft.speed;
+        speedDiff = 3f;
     }
 
     void FixedUpdate() // called 50x/sec, best for physics
@@ -29,6 +33,15 @@ public class Player : MonoBehaviour
 
         // set the x-axis speed and direction
         rig.velocity = new Vector2(xInput * moveSpeed, rig.velocity.y);
+
+        // change scroll speed depending on movement
+        if (xInput < 0) {
+            moveLeft.speed = normalSpeed - speedDiff;
+        } else if (xInput > 0) {
+            moveLeft.speed = normalSpeed + speedDiff;
+        } else {
+            moveLeft.speed = normalSpeed;
+        }
 
     }
 
@@ -56,7 +69,6 @@ public class Player : MonoBehaviour
             }
 
         }
-
     }
 
     private void Damage(GameObject destroyableItem, int damage)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 10f;
+    public float speed = 10f;
 
     // Update is called once per frame
     void Update()

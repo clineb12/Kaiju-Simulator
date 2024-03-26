@@ -11,14 +11,13 @@ public class RepeatBackground : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        moveLimit = startPos.x - 20f;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (transform.position.x < moveLimit)
+        if (transform.position.x < 0)
         {
             transform.position = startPos;
         }
