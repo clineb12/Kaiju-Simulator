@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    // Health
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public HealthBar healthBar;
+
     public float moveSpeed;  // public so the inspector can access it
     public Rigidbody2D rig;
     public float jumpForce;  // public so inspector can access it
@@ -20,6 +26,9 @@ public class Player : MonoBehaviour
     // I made this so its easier to call instead of typing GetComponent you know the drill aka storing a reference to a component.
     private void Start()
     {
+        currentHealth = maxHealth; // dealing with health
+        healthBar.SetMaxHealth(maxHealth);
+
         coll = GetComponent<BoxCollider2D>();
         PauseMenu.isPaused = false;
         normalSpeed = moveLeft.speed;
@@ -49,6 +58,12 @@ public class Player : MonoBehaviour
     {
         if (!PauseMenu.isPaused) //checks if game is paused (via PauseMenu script)
         {
+            // // TESTING FOR HEALTH
+            // if(Input.GetKeyDown(KeyCode.V))
+            // {
+            //     TakeDamage(20);
+            // }
+
             // detect when we jump
             if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
                 && IsGrounded())
@@ -69,6 +84,12 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+
+    public void TakeDamage(int damage)  // DAMAGE DEALING
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 
     private void Damage(GameObject destroyableItem, int damage)

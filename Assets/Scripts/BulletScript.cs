@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     public float force;
+    public int damage = 5; // sets damage of bullet
 
     private float timer;
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class BulletScript : MonoBehaviour
      {
         if(other.gameObject.CompareTag("Player"))
         {
+           other.gameObject.GetComponent<Player>().TakeDamage(damage); // hurts the player
            Destroy(gameObject);
         }
      }
