@@ -4112,7 +4112,7 @@ PrefabInstance:
     - target: {fileID: 2422272727423125172, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: Guy
       value: 
-      objectReference: {fileID: 21300000, guid: 0d1181beebe58ad4282c8950f9f7d43f, type: 3}
+      objectReference: {fileID: 21300000, guid: 1ef50407676b482418e0800a8d3caafc, type: 3}
     - target: {fileID: 2422272727423125172, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: DeadGuy
       value: 
@@ -4129,10 +4129,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 5261117577780656187, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4077702
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261117577780656187, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.36822778
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396898060924852280, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396898060924852280, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396898060924852280, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396898060924852280, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257495114930304480, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6666342352224920768, guid: 753e09681d379834c99418e7bd0dad05, type: 3}
     - target: {fileID: 6602367322762838529, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0d1181beebe58ad4282c8950f9f7d43f, type: 3}
+      objectReference: {fileID: 21300000, guid: 1ef50407676b482418e0800a8d3caafc, type: 3}
     - target: {fileID: 6602367322762838529, guid: 410a13169e91ddf409ad7c8a8805ed98, type: 3}
       propertyPath: m_SortingLayer
       value: 2

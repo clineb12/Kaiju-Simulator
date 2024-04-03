@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)  // DAMAGE DEALING
+    public void PlayerDamage(int damage)  // DAMAGE DEALING
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
         {
             Vehicle objScript = destroyableItem.GetComponent<Vehicle>();
             objScript.takeDamage(damage);
+            this.PlayerDamage(damage); // when the car hits you
             AudioManager.Instance.PlaySFX("Destroy");
         }
         else if (destroyableItem.CompareTag("Food"))
