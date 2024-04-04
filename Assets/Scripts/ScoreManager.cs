@@ -20,8 +20,8 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text ='$'+ score.ToString();
-        DcText.text = deaths.ToString() + " Killed";
+        scoreText.text =score.ToString();
+        DcText.text = deaths.ToString();
         
     }
 
@@ -29,12 +29,12 @@ public class ScoreManager : MonoBehaviour
     public void addDeath()
     {
         deaths += 1;
-        DcText.text =deaths.ToString() + " Killed";
+        DcText.text =deaths.ToString();
     }
 
     public void addPoint(int num)
     {
         score += num;
-        scoreText.text = '$' + score.ToString();
+        scoreText.text = score.ToString();
     }
 };
