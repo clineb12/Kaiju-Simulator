@@ -6,6 +6,7 @@ public class RepeatBackground : MonoBehaviour
 {
     private Vector3 startPos;
     private float moveLimit;
+    [SerializeField] private float resetPointOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -14,10 +15,9 @@ public class RepeatBackground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-        if (transform.position.x < 0)
+        if (transform.position.x < startPos.x - resetPointOffset)
         {
             transform.position = startPos;
         }
