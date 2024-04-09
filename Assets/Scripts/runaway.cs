@@ -22,21 +22,14 @@ public class runaway : MonoBehaviour
     {
         if (!isEaten)
         {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            Debug.Log("Distance to player: " + distanceToPlayer); // shows on the bottom on unity how far the distance is from the player to the object
-
-            if (distanceToPlayer <= detectionDistance || distanceToPlayer <= -detectionDistance)
-            {
-                // Calculate the direction from the object to the player
-                Vector2 direction = (transform.position - player.position).normalized;
-                // Move the object away from the player
-                rb.velocity = direction * speed;
-            }
-            else
-            {
-                // If player is not within detection distance, stay idle
-                rb.velocity = Vector2.zero;
-            }
+           // Move the enemy constantly left
+            rb.velocity = Vector2.left * speed;
+            
+            // else
+            // {
+            //     // If player is not within detection distance, stay idle
+            //     rb.velocity = Vector2.zero;
+            // }
         }
     }
         

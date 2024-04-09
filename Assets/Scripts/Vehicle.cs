@@ -11,6 +11,11 @@ public class Vehicle : MonoBehaviour
 
     public int damage = 5;
     [SerializeField] private BoxCollider2D boxColl;
+    private Vector2 startPos;
+
+    void Start() {
+        startPos = transform.position;
+    }
 
 
     void Update()
@@ -27,6 +32,13 @@ public class Vehicle : MonoBehaviour
             boxColl.enabled = false;
             
         }
+    }
+
+    void LateUpdate() {
+        // Keep vehicle position at constant y
+        Vector2 playerPosition = transform.position;
+        playerPosition.y = startPos.y;
+        transform.position = playerPosition;
     }
 
     public int getHealth() {
