@@ -37,7 +37,7 @@ public class BulletScript : MonoBehaviour
      {
         if(other.gameObject.CompareTag("Player"))
         {
-           other.gameObject.GetComponent<Player>().TakeDamage(damage); // hurts the player
+           other.gameObject.GetComponent<Player>().PlayerDamage(damage); // hurts the player
            Destroy(gameObject);
         }
      }

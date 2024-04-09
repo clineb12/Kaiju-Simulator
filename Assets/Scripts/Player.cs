@@ -22,13 +22,14 @@ public class Player : MonoBehaviour
     private BoxCollider2D coll;
     [SerializeField] private LayerMask jumpableGround; // so you can pass a layer into the field (IT SHOULD BE foreground)
     [SerializeField] private MoveLeft moveLeft; // for controlling scroll speed
+    [SerializeField] private float leftBorder = -10f;
+    [SerializeField] private float rightBorder = 10f;
 
     // I made this so its easier to call instead of typing GetComponent you know the drill aka storing a reference to a component.
     private void Start()
     {
         currentHealth = maxHealth; // dealing with health
         healthBar.SetMaxHealth(maxHealth);
-
         coll = GetComponent<BoxCollider2D>();
         PauseMenu.isPaused = false;
         normalSpeed = moveLeft.speed;
@@ -45,7 +46,7 @@ public class Player : MonoBehaviour
 
         // change scroll speed depending on movement
         if (xInput < 0) {
-            moveLeft.speed = normalSpeed - speedDiff;
+            moveLeft.speed = normalSpeed - (speedDiff / 2);
         } else if (xInput > 0) {
             moveLeft.speed = normalSpeed + speedDiff;
         } else {
@@ -86,7 +87,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)  // DAMAGE DEALING
+    void LateUpdate() {
+        // Ensure player doesn't go off screen
+        Vector2 playerPosition = transform.position;
+        if (playerPosition.x < leftBorder) {
+            playerPosition.x = leftBorder;
+        } else if (playerPosition.x > rightBorder) {
+            playerPosition.x = rightBorder;
+        }
+
+        transform.position = playerPosition;
+    }
+
+    public void PlayerDamage(int damage)  // DAMAGE DEALING
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -100,6 +113,7 @@ public class Player : MonoBehaviour
         {
             Vehicle objScript = destroyableItem.GetComponent<Vehicle>();
             objScript.takeDamage(damage);
+            this.PlayerDamage(damage); // when the car hits you
             AudioManager.Instance.PlaySFX("Destroy");
         }
         else if (destroyableItem.CompareTag("Food"))

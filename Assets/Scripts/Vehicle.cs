@@ -9,7 +9,9 @@ public class Vehicle : MonoBehaviour
     public Sprite Car;
     public Sprite DestroyedCar;
 
+    public int damage = 5;
     [SerializeField] private BoxCollider2D boxColl;
+
 
     void Update()
     {
@@ -29,6 +31,15 @@ public class Vehicle : MonoBehaviour
 
     public int getHealth() {
         return health;
+    }
+
+     void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Deal damage to the player when colliding with the vehicle
+            collision.gameObject.GetComponent<Player>().PlayerDamage(damage);
+        }
     }
 
     public void takeDamage(int damage) {
