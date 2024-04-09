@@ -22,6 +22,7 @@ public class Vehicle : MonoBehaviour
     {
         if (health == 1)
         {
+            boxColl.enabled = true;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = Car;
         }
         else if (health == 0)

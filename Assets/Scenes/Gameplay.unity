@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b8f02aa06d31747989364ea3698505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
   player: {fileID: 1760549836}
   detectionDistance: 10
 --- !u!50 &256604650
@@ -788,6 +788,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &256604652 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7673147114551920868, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
+  m_PrefabInstance: {fileID: 8951844009691168993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &352307980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,7 +4715,7 @@ PrefabInstance:
     - target: {fileID: 3812705129253725196, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
       propertyPath: boxColl
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 256604652}
     - target: {fileID: 4869003960836993813, guid: 12f7ce05e576ac74480d6af1afb047a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.17
