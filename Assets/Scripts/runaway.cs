@@ -36,6 +36,7 @@ public class runaway : MonoBehaviour
     public void BeEaten()
     {
         isEaten = true;
-        rb.velocity = Vector2.zero; // Stops the movement
+        // rb.velocity = Vector2.zero; // Stops the movement
+        rb.velocity = Vector2.left * speed;
     }
 }
