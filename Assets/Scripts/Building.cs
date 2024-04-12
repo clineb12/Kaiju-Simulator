@@ -11,8 +11,14 @@ public class Building : MonoBehaviour
     public Sprite HalfDamage;
     public Sprite DestroyedBuilding;
 
+    public int damage = 5;
     [SerializeField] private BoxCollider2D boxColl;
 
+    private Vector2 startPos;
+
+    void Start() {
+        startPos = transform.position;
+    }
     void Update()
     {
         if (health == 3)
@@ -34,6 +40,15 @@ public class Building : MonoBehaviour
             boxColl.enabled = false;
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Deal damage to the player when colliding with the vehicle
+            collision.gameObject.GetComponent<Player>().PlayerDamage(damage);
+        }
+    }
+    
 
     public int getHealth() {
         return health;
